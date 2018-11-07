@@ -18,14 +18,14 @@ while getopts ius:x:y:z: OPT
 do
   case $OPT in
     "i" ) FLG_ZINC="TRUE" ;;
-    "u" ) H_OPT=" -U /''" ;;
+    "a" ) H_OPT=" -U /''" ;;
     "s" ) NPTS=$OPTARG ;;
     "x" ) GC_X=$OPTARG ;;
     "y" ) GC_Y=$OPTARG ;;
     "z" ) GC_Z=$OPTARG ;;
-    * ) echo "Usage: $0 [-i] [-u] [-s] [-x] [-y] [-z] [ProteinName(*.pdb)] [LigandFile(*.pdb, *.mol2)]"
+    * ) echo "Usage: $0 [-i] [-a] [-s] [-x] [-y] [-z] [ProteinName(*.pdb)] [LigandFile(*.pdb, *.mol2)]"
       echo "-i=<Use Zn force Field>"
-      echo "-u=Ligand Hydrogen Option.<Use all H> (when don't use -u, use only pola H)"
+      echo "-a=Ligand Hydrogen Option.<Use all H> (when don't use -a, use only pola H)"
       echo "-s=<Size of grid Box>"
       echo "-x=<Grid center X>"
       echo "-y=<Grid center Y>"
@@ -38,9 +38,9 @@ done
 # オプション部分を切り捨てる。
 shift `expr $OPTIND - 1`
 if [ $# -ne 2 ]; then
-  echo "Usage: $0 [-i] [-u] [-s] [-x] [-y] [-z] [ProteinName(*.pdb)] [LigandFile(*.pdb, *.mol2)]"
+  echo "Usage: $0 [-i] [-a] [-s] [-x] [-y] [-z] [ProteinName(*.pdb)] [LigandFile(*.pdb, *.mol2)]"
   echo "-i=<Use Zn force Field>"
-  echo "-u=Ligand Hydrogen Option.<Use all H> (when don't use -u, use only pola H)"
+  echo "-a=Ligand Hydrogen Option.<Use all H> (when don't use -a, use only pola H)"
   echo "-s=<Size of grid Box>"
   echo "-x=<Grid center X>"
   echo "-y=<Grid center Y>"
