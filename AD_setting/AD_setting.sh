@@ -5,8 +5,6 @@
 # 概要
 # タンパク質とリガンドの入力から、AutoDockに必要なもファイルの作成などを諸々してくれるツール
 
-CMDNAME="AD_setting.sh"
-
 # デフォルト値。何度も同じリガンド・タンパク質に対してい計算を行う際にはこの方がいいかも。
 NPTS=65
 GC_X=17.6
@@ -39,7 +37,6 @@ done
 
 # オプション部分を切り捨てる。
 shift `expr $OPTIND - 1`
-echo $#
 if [ $# -ne 2 ]; then
   echo "Usage: $0 [-i] [-u] [-s] [-x] [-y] [-z] [ProteinName(*.pdb)] [LigandFile(*.pdb, *.mol2)]"
   echo "-i=<Use Zn force Field>"
@@ -60,7 +57,6 @@ echo "$NPTS_X x $NPTS_Y x $NPTS_Z"
 
 # box center。引数もしくは自動で設定したい。
 echo "x:$GC_X, y:$GC_Y, z:$GC_Z"
-
 
 
 INPUT_PROTEIN=$1
