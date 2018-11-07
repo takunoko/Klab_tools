@@ -41,9 +41,13 @@ done
 shift `expr $OPTIND - 1`
 echo $#
 if [ $# -ne 2 ]; then
-  echo "AD_setting.sh [-z] タンパク質.pdb リガンド{.pdb/.mol2}"
-  echo "の形式で実行してください。"
-  echo "オプションをつけるなら、入力構造指定の前。 例) -z -u タンパク質.pdb リガンド{.pdb/.mol2}"
+  echo "Usage: $0 [-i] [-u] [-s] [-x] [-y] [-z] [ProteinName(*.pdb)] [LigandFile(*.pdb, *.mol2)]"
+  echo "-i=<Use Zn force Field>"
+  echo "-u=Ligand Hydrogen Option.<Use all H> (when don't use -u, use only pola H)"
+  echo "-s=<Size of grid Box>"
+  echo "-x=<Grid center X>"
+  echo "-y=<Grid center Y>"
+  echo "-z=<Grid center Z>"
   exit -1
 fi
 
