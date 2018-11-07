@@ -1,0 +1,1 @@
+../AD_setting/AD_setting.sh
